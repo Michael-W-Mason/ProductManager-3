@@ -18,7 +18,22 @@ module.exports.findOneProduct = (req, res) => {
     Product.findOne({ _id: req.params.id })
         .then(oneProduct => {
             res.json({ product: oneProduct })
-            console.log(oneProduct);
+        })
+        .catch(err => res.json({ msg: "An Error Occured", error: err }));
+}
+
+module.exports.editOneProduct = (req, res) => {
+    Product.findOneAndUpdate({_id : req.params.id}, req.body, {new: true})
+        .then(editProduct => {
+            res.json({product: editProduct})
+        })
+        .catch(err => res.json({ msg: "An Error Occured", error: err }));
+}
+
+module.exports.deleteOneProduct = (req, res) =>{
+    Product.deleteOne({_id: req.params.id})
+        .then(deletedProduct => {
+            res.json({product: deletedProduct})
         })
         .catch(err => res.json({ msg: "An Error Occured", error: err }));
 }

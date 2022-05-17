@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProductForm from "./components/ProductsForm";
 import Product from "./components/Product"
 import ProductList from "./components/ProductList";
+import EditProductForm from "./components/EditProductForm";
 
 function App() {
 
@@ -12,8 +13,11 @@ function App() {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/product/:id">
-            <Product />
+          <Route path="/:id/edit">
+            <EditProductForm submitted={submitted} setSubmitted={setSubmitted}/>
+          </Route>
+          <Route path="/:id">
+            <Product submitted={submitted} setSubmitted={setSubmitted}/>
           </Route>
           <Route path="/">
             <ProductForm submitted={submitted} setSubmitted={setSubmitted} />
