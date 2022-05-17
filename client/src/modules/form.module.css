@@ -1,0 +1,36 @@
+.formcontainer{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.formtitle{
+    align-self: center;
+}
+
+.formitem{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formcontent{
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.submitbutton{
+    align-self: center;
+    margin: 5px 0px;
+}
+
